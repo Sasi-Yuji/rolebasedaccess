@@ -1,0 +1,155 @@
+DEBUG - 2026-04-02 06:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-02 06:49:45 --> Table 'rolebasedacess.student_bus' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = :student_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\StudentBusModel.php(18): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\BusController.php(77): App\Models\StudentBusModel->getStudentBusInfo('4')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\BusController->studentBus()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BusController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 06:49:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'rolebasedacess.student_bus' doesn't exist
+[Method: GET, Route: student/bus]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = :student_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\StudentBusModel.php(18): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\BusController.php(77): App\Models\StudentBusModel->getStudentBusInfo('4')
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\BusController->studentBus()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BusController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 06:49:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'rolebasedacess.student_bus' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = :student_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\StudentBusModel.php(18): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\BusController.php(77): App\Models\StudentBusModel->getStudentBusInfo('4')
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\BusController->studentBus()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BusController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 06:49:45 --> [Caused by] mysqli_sql_exception: Table 'rolebasedacess.student_bus' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = \'4\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `student_bus`.*, `bus_routes`.`route_name`, `bus_routes`.`driver_name`, `bus_routes`.`driver_phone`, `bus_routes`.`status`, `bus_stops`.`stop_name`, `bus_stops`.`arrival_time`
+FROM `student_bus`
+LEFT JOIN `bus_routes` ON `bus_routes`.`id` = `student_bus`.`route_id`
+LEFT JOIN `bus_stops` ON `bus_stops`.`id` = `student_bus`.`stop_id`
+WHERE `student_id` = :student_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\StudentBusModel.php(18): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\BusController.php(77): App\Models\StudentBusModel->getStudentBusInfo('4')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\BusController->studentBus()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BusController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 07:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 07:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 07:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 07:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 07:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 07:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
