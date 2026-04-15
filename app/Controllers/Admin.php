@@ -13,6 +13,9 @@ class Admin extends BaseController
         $userModel = new User_model();
         $subModel = new Subject_model();
         
+        $leaveModel = new \App\Models\LeaveRequestModel();
+        $activityModel = new \App\Models\ActivityLogModel();
+        
         $data = [
             'title' => 'Admin Dashboard',
             'stats' => [
@@ -21,9 +24,11 @@ class Admin extends BaseController
                 'hods'     => $userModel->where('role', 'hod')->countAllResults(),
                 'subjects' => $subModel->countAll(),
             ],
+            'pendingLeavesCount' => $leaveModel->where('status', 'Pending')->countAllResults(),
+            'totalActivities' => $activityModel->countAllResults(),
             'recentStudents' => $userModel->where('role', 'student')->orderBy('created_at', 'DESC')->limit(5)->findAll(),
             'totalAssignments' => $subModel->db->table('faculty_subjects')->countAllResults(),
-            'recentLeaves' => (new \App\Models\LeaveRequestModel())->select('leave_requests.*, users.name as faculty_name')
+            'recentLeaves' => $leaveModel->select('leave_requests.*, users.name as faculty_name')
                 ->join('users', 'users.id = leave_requests.faculty_id')
                 ->orderBy('leave_requests.created_at', 'DESC')
                 ->limit(5)->findAll()

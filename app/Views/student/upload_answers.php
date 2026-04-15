@@ -351,11 +351,12 @@
     .data-table th { background: #f8fafc; color: #475569; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 1rem; border-bottom: 2px solid #f1f5f9; text-align: left; }
     .data-table td { border-bottom: 1px solid #f1f5f9; padding: 1rem; }
     
-    /* SweetAlert2 Background Blur */
-    .swal2-container.swal2-backdrop-show {
+    /* Center Modals: Apply Blur */
+    .swal2-container.swal2-center.swal2-backdrop-show {
         backdrop-filter: blur(5px) !important;
         background: rgba(0, 0, 0, 0.6) !important;
     }
+    
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

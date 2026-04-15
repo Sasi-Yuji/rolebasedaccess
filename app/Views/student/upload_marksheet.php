@@ -94,7 +94,7 @@
 <div id="crop-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 99999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
     <div style="background: white; width: 95%; max-width: 800px; border-radius: 24px; overflow: hidden; height: 90vh; display: flex; flex-direction: column;">
         <div style="padding: 1.5rem 2rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="font-weight: 800; color: #1e293b; margin: 0;">Free Size Crop</h3>
+            <h3 style="font-weight: 800; color: #1e293b; margin: 0;">Standard A4 Crop</h3>
             <div style="display: flex; gap: 0.5rem;">
                 <button onclick="rotateCrop(-90)" class="btn-action" title="Rotate Left" style="background: #f1f5f9; padding: 0.5rem; border-radius: 8px; border: none; cursor: pointer;"><i class="fas fa-rotate-left"></i></button>
                 <button onclick="rotateCrop(90)" class="btn-action" title="Rotate Right" style="background: #f1f5f9; padding: 0.5rem; border-radius: 8px; border: none; cursor: pointer;"><i class="fas fa-rotate-right"></i></button>
@@ -155,9 +155,12 @@
             cropImg.onload = function() {
                 if (cropper) cropper.destroy();
                 cropper = new Cropper(cropImg, {
-                    viewMode: 1, // Keep crop box bounded to the image dimensions
-                    autoCropArea: 0.95,
-                    dragMode: 'move', // Allow panning the image
+                    aspectRatio: 1 / 1.414, // Fixed A4 Ratio
+                    viewMode: 1, // Keep crop box bounded
+                    dragMode: 'move', // Panning the image
+                    autoCropArea: 1, // Fill the container as much as possible
+                    cropBoxResizable: false, // Locked size
+                    cropBoxMovable: false, // Locked position
                     guides: true,
                     center: true,
                     highlight: false,
@@ -301,11 +304,12 @@
     .data-table th { background: #f8fafc; color: #475569; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 1rem; border-bottom: 2px solid #f1f5f9; text-align: left; }
     .data-table td { border-bottom: 1px solid #f1f5f9; padding: 1rem; }
     
-    /* SweetAlert2 Background Blur */
-    .swal2-container.swal2-backdrop-show {
+    /* Center Modals: Apply Blur */
+    .swal2-container.swal2-center.swal2-backdrop-show {
         backdrop-filter: blur(5px) !important;
         background: rgba(0, 0, 0, 0.6) !important;
     }
+    
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

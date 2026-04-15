@@ -9,12 +9,21 @@ class Student extends BaseController
 {
     public function dashboard()
     {
-        $marksModel = new Marks_model();
         $student_id = session()->get('id');
+        $marksModel = new Marks_model();
+        $leaveModel = new \App\Models\StudentLeaveModel();
+        $docModel = new \App\Models\Student_document_model();
+        $subModel = new \App\Models\Subject_model();
         
         $data = [
             'title' => 'Student Dashboard',
-            'marks' => $marksModel->getStudentMarks($student_id)
+            'marks' => $marksModel->getStudentMarks($student_id),
+            'stats' => [
+                'pending_leaves' => $leaveModel->where('student_id', $student_id)->where('status', 'Pending')->countAllResults(),
+                'total_docs'     => $docModel->where('student_id', $student_id)->countAllResults(),
+                'enrolled_subs'  => $subModel->countAll(),
+            ],
+            'recentLogs' => (new \App\Models\ActivityLogModel())->where('user_id', $student_id)->orderBy('created_at', 'DESC')->limit(5)->findAll()
         ];
         return view('layouts/header', $data) . view('student/dashboard', $data) . view('layouts/footer');
     }

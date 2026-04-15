@@ -28,7 +28,7 @@
                 <tr>
                     <td>
                         <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <img src="https://ui-avatars.com/api/?name=<?= urlencode($r['student_name']) ?>&background=random" style="width: 32px; height: 32px; border-radius: 8px;">
+                            <img src="https://ui-avatars.com/api/?name=<?= urlencode($r['student_name']) ?>&background=EEF2FF&color=4F46E5" style="width: 32px; height: 32px; border-radius: 8px;">
                             <div>
                                 <div style="font-weight: 600; color: #1e293b;"><?= $r['student_name'] ?></div>
                                 <div style="font-size: 0.75rem; color: #64748b;"><?= $r['student_email'] ?></div>

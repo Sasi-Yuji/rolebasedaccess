@@ -159,7 +159,14 @@
                 <?php endforeach; ?>
                 
                 <?php if(empty($assignedSubjects)): ?>
-                    <div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--secondary);">No active courses found.</div>
+                    <div style="grid-column: 1/-1; padding: 3rem; text-align: center; background: #f8fafc; border: 2px dashed #e2e8f0; border-radius: 20px;">
+                        <div style="width: 56px; height: 56px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #94a3b8; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                            <i class="fas fa-book-open" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 700; color: #475569; margin-bottom: 0.5rem;">No Assigned Subjects Yet</h4>
+                        <p style="font-size: 0.85rem; color: #64748b; max-width: 300px; margin: 0 auto 1.5rem;">Once the administrator assigns subjects to your profile, they will appear here for management and grading.</p>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary); background: #eef2ff; padding: 0.4rem 1rem; border-radius: 50px; text-transform: uppercase;">Awaiting Curriculum Sync</span>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -172,7 +179,10 @@
                     <div style="position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: #e2e8f0;"></div>
                     
                     <?php if(empty($recentGrades)): ?>
-                        <div style="color: var(--secondary); font-size: 0.875rem;">No grading activity recorded yet.</div>
+                        <div style="padding: 2rem 1rem; text-align: center;">
+                            <p style="color: #64748b; font-size: 0.875rem; font-weight: 500;">No grading activity recorded yet.</p>
+                            <p style="color: #94a3b8; font-size: 0.75rem; margin-top: 0.5rem;">When you submit internal marks for your students, your recent actions will be tracked here.</p>
+                        </div>
                     <?php else: ?>
                         <?php foreach($recentGrades as $index => $rg): ?>
                         <div style="position: relative; margin-bottom: <?= $index !== count($recentGrades) - 1 ? '1.5rem' : '0' ?>; display: flex; justify-content: space-between; align-items: center;">

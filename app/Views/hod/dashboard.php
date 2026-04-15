@@ -108,9 +108,17 @@
             <?php endforeach; ?>
             <?php if(empty($pendingLeaves)): ?>
             <tr>
-                <td colspan="5" style="text-align: center; padding: 3rem; color: #94a3b8;">
-                    <i class="fas fa-inbox" style="font-size: 2rem; display: block; margin-bottom: 0.5rem;"></i>
-                    No leave requests found.
+                <td colspan="5" style="padding: 4rem 1rem;">
+                    <div style="text-align: center; max-width: 400px; margin: 0 auto;">
+                        <div style="width: 64px; height: 64px; background: #f0fdf4; color: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem;">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h4 style="font-weight: 800; color: #1e293b; margin-bottom: 0.5rem;">Queue is Clear!</h4>
+                        <p style="font-size: 0.875rem; color: #64748b;">There are no pending leave applications awaiting your review. Great job maintaining the department workload!</p>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem; justify-content: center;">
+                             <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; background: #ecfdf5; padding: 0.25rem 0.75rem; border-radius: 50px; text-transform: uppercase;">Real-time Monitored</span>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <?php endif; ?>

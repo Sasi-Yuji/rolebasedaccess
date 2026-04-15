@@ -33,7 +33,7 @@ if (! function_exists('site_url')) {
      */
     function site_url($relativePath = '', ?string $scheme = null, ?App $config = null): string
     {
-        $currentURI = service('request')->getUri();
+        $currentURI = service('request')->getUri();   
 
         assert($currentURI instanceof SiteURI);
 

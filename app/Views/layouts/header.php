@@ -52,7 +52,7 @@
                     <div style="background: var(--primary); padding: 0.5rem; border-radius: 8px;">
                         <i class="fas fa-graduation-cap" style="color: white; font-size: 1.25rem;"></i>
                     </div>
-                    <h2 class="sidebar-title" style="font-size: 1.25rem; font-weight: 700; color: var(--dark);">CampusPro</h2>
+                    <h2 class="sidebar-title" style="font-size: 1.25rem; font-weight: 800; color: #1e1b4b; letter-spacing: -0.025em;">CampusPro</h2>
                 </div>
                 <button class="md:hidden text-slate-400 p-2" onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
             </div>
@@ -182,8 +182,8 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <div>
-                        <h1 style="font-size: 1.25rem; font-weight: 600; margin: 0;"><?= $title ?? 'Dashboard' ?></h1>
-                        <p style="color: #64748b; font-size: 0.75rem; margin: 0;">Welcome back, <?= session()->get('name') ?></p>
+                        <h1 style="font-size: 1.25rem; font-weight: 600; margin: 0; color: #1e1b4b;"><?= $title ?? 'Dashboard' ?></h1>
+                        <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500;">Welcome back, <span style="color: #4f46e5; font-weight: 700;"><?= session()->get('name') ?></span></p>
                     </div>
                 </div>
 
@@ -198,11 +198,11 @@
                 
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <div style="text-align: right;">
-                        <div style="font-weight: 600; font-size: 0.875rem;"><?= session()->get('name') ?></div>
-                        <div class="badge badge-<?= $role ?>" style="font-size: 0.75rem; text-transform: uppercase;"><?= $role ?></div>
+                        <div style="font-weight: 700; font-size: 0.875rem; color: #1e1b4b;"><?= session()->get('name') ?></div>
+                        <div class="badge badge-<?= $role ?>" style="font-size: 0.65rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.05em; padding: 0.1rem 0.6rem; border: 1px solid currentColor;"><?= $role ?></div>
                     </div>
                     <div style="width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                         <img src="https://ui-avatars.com/api/?name=<?= urlencode(session()->get('name')) ?>&background=random" alt="Avatar">
+                         <img src="https://ui-avatars.com/api/?name=<?= urlencode(session()->get('name')) ?>&background=EEF2FF&color=4F46E5" alt="Avatar">
                     </div>
                 </div>
             </header>

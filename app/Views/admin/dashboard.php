@@ -73,21 +73,21 @@
             </div>
         </div>
 
-        <!-- System Health -->
-        <div class="group p-5 bg-slate-50/50 border border-slate-100 rounded-2xl hover:bg-white hover:border-amber-200 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300">
+        <!-- System Monitoring -->
+        <div class="group p-5 bg-slate-50/50 border border-slate-100 rounded-2xl hover:bg-white hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300">
             <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-600 rounded-xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                    <i class="fas fa-server"></i>
+                <div class="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-microchip"></i>
                 </div>
-                <div class="flex items-center gap-1 text-[10px] font-bold text-amber-500 bg-amber-50 px-2 py-1 rounded-lg">
-                    Cloud
+                <div class="flex items-center gap-1 text-[10px] font-bold <?= $pendingLeavesCount > 0 ? 'text-amber-500 bg-amber-50' : 'text-emerald-500 bg-emerald-50' ?> px-2 py-1 rounded-lg">
+                    <?= $pendingLeavesCount > 0 ? 'Tasks Pending' : 'Clear' ?>
                 </div>
             </div>
             <div>
-                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">System Load</div>
-                <div class="text-2xl font-black text-slate-800 tracking-tight mb-1">Optimal</div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Queue Status</div>
+                <div class="text-2xl font-black text-slate-800 tracking-tight mb-1"><?= $pendingLeavesCount > 0 ? 'Busy' : 'Idle' ?></div>
                 <div class="text-[10px] font-medium text-slate-500 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> 100% Uptime
+                    <span class="w-1.5 h-1.5 <?= $pendingLeavesCount > 0 ? 'bg-amber-400' : 'bg-emerald-400' ?> rounded-full"></span> <?= $pendingLeavesCount ?> Leave Requests
                 </div>
             </div>
         </div>
@@ -136,9 +136,13 @@
             
             <div class="space-y-3">
                 <?php if (empty($recentStudents)): ?>
-                    <div class="flex flex-col items-center justify-center py-10 grayscale opacity-50">
-                        <i class="fas fa-folder-open text-4xl mb-4"></i>
-                        <p class="text-sm font-medium text-slate-500">No recent students found.</p>
+                    <div class="flex flex-col items-center justify-center py-10 bg-slate-50/30 border-2 border-dashed border-slate-100 rounded-3xl">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-300 mb-4">
+                            <i class="fas fa-user-plus text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-bold text-slate-400">Welcome to the Enrollment Phase</p>
+                        <p class="text-[10px] font-medium text-slate-400 mt-1 px-8 text-center">Your student roster is currently empty. Start building your campus by onboarding your first student.</p>
+                        <a href="<?= base_url('admin/students') ?>" class="mt-4 px-4 py-2 bg-indigo-600 text-white text-[10px] font-bold rounded-xl shadow-lg shadow-indigo-200 hover:scale-105 transition-transform uppercase tracking-wider">Add First Student</a>
                     </div>
                 <?php else: ?>
                     <?php foreach ($recentStudents as $s): ?>
@@ -170,7 +174,13 @@
             
             <div class="space-y-3">
                 <?php if (empty($recentLeaves)): ?>
-                    <p class="text-sm text-slate-500 py-10 text-center">No recent leave activity.</p>
+                    <div class="flex flex-col items-center justify-center py-12 border-2 border-dashed border-slate-100 rounded-3xl bg-slate-50/20">
+                        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-emerald-400 mb-3">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-tight">All Caught Up!</p>
+                        <p class="text-[10px] font-medium text-slate-400 mt-1">There are no leave requests pending review at this time.</p>
+                    </div>
                 <?php else: ?>
                     <?php foreach ($recentLeaves as $rl): ?>
                     <div class="flex items-center justify-between p-4 bg-slate-50/50 border border-slate-100 rounded-2xl">
@@ -225,12 +235,10 @@
                 </div>
 
                 <div class="p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm">
-                    <div class="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Session Status</div>
-                    <div class="flex items-center gap-2 mt-2">
-                        <span class="w-5 h-5 flex items-center justify-center bg-indigo-500/20 text-indigo-400 rounded-md">
-                            <i class="fas fa-calendar-alt text-[10px]"></i>
-                        </span>
-                        <span class="text-sm font-bold text-slate-200">Spring 2026 Admin</span>
+                    <div class="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">System Activity</div>
+                    <div class="flex items-baseline gap-2">
+                        <div class="text-3xl font-black text-amber-400 tracking-tight"><?= $totalActivities ?></div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Logs</span>
                     </div>
                 </div>
             </div>
