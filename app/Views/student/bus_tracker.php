@@ -87,7 +87,7 @@
                     <i class="fas fa-route" style="font-size: 2.5rem; color: #cbd5e1;"></i>
                 </div>
                 <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem;">No Active Routes</h3>
-                <p style="color: var(--secondary);">The administration hasn't set up any bus routes yet.</p>
+                <p style="color: var(--secondary);">The administration has not set up any bus routes yet.</p>
             </div>
         <?php endif; ?>
     </div>
