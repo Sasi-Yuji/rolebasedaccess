@@ -14,14 +14,14 @@
     <div style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); padding: 2.5rem; border-radius: 24px; margin-bottom: 2rem; color: white; position: relative; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center;">
         <div style="position: relative; z-index: 1; flex: 1;">
             <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">Academic Overview</h2>
-            <p style="opacity: 0.9; font-size: 1.1rem;">Track your progress, grades, and upcoming academic milestones.</p>
+            <p style="opacity: 0.9; font-size: 1.1rem;">Track your progress, grades, and upcoming academic Milestones.</p>
         </div>
 
         <!-- Dynamic Progression Content -->
         <div style="position: relative; z-index: 1; flex: 1.5; display: flex; justify-content: flex-start; gap: 4rem; padding-left: 4rem;">
             <div style="text-align: center;">
                 <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 0.5rem; font-weight: 700;">Semester Progress</div>
-                <div style="font-size: 1.75rem; font-weight: 800;">72%</div>
+                <div style="font-size: 1.75rem; font-weight: 800;">70%</div>
                 <div style="width: 100px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-top: 0.5rem; overflow: hidden;">
                     <div style="width: 72%; height: 100%; background: white;"></div>
                 </div>
