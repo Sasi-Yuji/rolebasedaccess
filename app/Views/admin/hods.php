@@ -90,7 +90,7 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" id="email" class="form-control" maxlength="25" required>
+                <input type="email" name="email" id="email" class="form-control" maxlength="35" required>
                 <div id="emailError" class="error-message"></div>
             </div>
             <div class="form-group">

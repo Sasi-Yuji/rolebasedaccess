@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" name="email" id="email" class="form-control" required placeholder="admin@college.edu" maxlength="25">
+                <input type="email" name="email" id="email" class="form-control" required placeholder="admin@college.edu" maxlength="35">
                 <div id="emailError" class="error-message"></div>
             </div>
             <div class="form-group">
