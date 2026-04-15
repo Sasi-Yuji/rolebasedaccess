@@ -21,7 +21,7 @@ class FormValidator {
 
     /**
      * Prevent typing numbers after @ in Email
-     * Limit to 25 characters
+     * Limit to 35 characters
      */
     lockEmailField(elementId) {
         $(elementId).on('input', function(e) {
@@ -31,8 +31,8 @@ class FormValidator {
                 parts[1] = parts[1].replace(/\d/g, '');
                 val = parts[0] + '@' + parts[1];
             }
-            if (val.length > 25) {
-                val = val.substring(0, 25);
+            if (val.length > 35) {
+                val = val.substring(0, 35);
             }
             $(this).val(val);
         });
@@ -124,8 +124,8 @@ class FormValidator {
             this.showError(errorId, 'Email is required.');
             return false;
         }
-        if (val.length > 25) {
-            this.showError(errorId, 'Email must not exceed 25 characters.');
+        if (val.length > 35) {
+            this.showError(errorId, 'Email must not exceed 35 characters.');
             return false;
         }
         const emailParts = val.split('@');
@@ -141,7 +141,15 @@ class FormValidator {
             this.showError(errorId, 'Numbers are forbidden in the domain part.');
             return false;
         } 
-        if (emailParts[1].toLowerCase().includes('gmail') && emailParts[1].toLowerCase() !== 'gmail.com') {
+        const domain = emailParts[1].toLowerCase();
+        if (domain.includes('gmail') && domain !== 'gmail.com') {
+            if (domain.startsWith('gmail.')) {
+                const afterDot = domain.slice(6);
+                if ('com'.startsWith(afterDot)) {
+                    this.hideError(errorId);
+                    return true;
+                }
+            }
             this.showError(errorId, 'Gmail domain must be exactly gmail.com.');
             return false;
         } 
